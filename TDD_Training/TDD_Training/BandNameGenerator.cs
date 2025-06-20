@@ -11,12 +11,17 @@ public class BandNameGenerator
 
         if (IsStartAndEndLetterSame(noun))
         {
-            return char.ToUpper(noun[0]) + noun[1..] + noun[1..];
+            return FirstLetterToUpper(noun) + noun[1..];
         }
         else
         {
-            return "The " + char.ToUpper(noun[0]) + noun[1..];
+            return "The " + FirstLetterToUpper(noun);
         }
+    }
+
+    private static string FirstLetterToUpper(string noun)
+    {
+        return char.ToUpper(noun[0]) + noun[1..];
     }
 
     private static bool IsStartAndEndLetterSame(string noun)
