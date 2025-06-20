@@ -4,6 +4,14 @@ namespace TDD_Training.Tests;
 
 public class Tests
 {
+    private StringAverage _stringAverage;
+
+    [SetUp]
+    public void SetUp()
+    {
+        _stringAverage = new StringAverage();
+    }
+
     [Test]
     public void return_average_number_for_input_normal_string()
     {
@@ -35,10 +43,17 @@ public class Tests
 
         AssertAverage(input, "four");
     }
-
-    private static void AssertAverage(string input, string expected)
+    [Test]
+    public void return_na_for_input_invalid_string()
     {
-        var result = StringAverage.Calculate(input);
+        const string input = "how are you";
+
+        AssertAverage(input, "n/a");
+    }
+
+    private void AssertAverage(string input, string expected)
+    {
+        var result = _stringAverage.Calculate(input);
         result.Should().Be(expected);
     }
 }
