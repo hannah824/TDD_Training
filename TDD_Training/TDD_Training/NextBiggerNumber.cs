@@ -4,6 +4,11 @@ public class NextBiggerNumber
 {
     public int FindNextBiggerNumber(int n)
     {
+        if (n < 0)
+        {
+            return -1;
+        }
+
         var digits = NumberSeparateToArray(n);
 
         if (digits.Length <= 1)

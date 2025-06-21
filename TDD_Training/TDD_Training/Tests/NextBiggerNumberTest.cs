@@ -25,6 +25,7 @@ public class NextBiggerNumberTests
     [TestCase(9)]
     [TestCase(111)]
     [TestCase(531)]
+    [TestCase(-11)]
     public void should_return_minus_one_when_no_bigger_number_exists(int input)
     {
         var result = _nextBiggerNumber.FindNextBiggerNumber(input);
