@@ -10,7 +10,7 @@ public class ContainsDuplicate2
         {
             if (dict.TryGetValue(nums[i], out var lastIndex))
             {
-                if (i - lastIndex <= k)
+                if (CalculateAbsDiff(i, lastIndex) <= k)
                 {
                     return true;
                 }
@@ -19,5 +19,10 @@ public class ContainsDuplicate2
         }
 
         return false;
+    }
+
+    private static int CalculateAbsDiff(int i, int lastIndex)
+    {
+        return Math.Abs(i - lastIndex);
     }
 }
